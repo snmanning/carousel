@@ -4,27 +4,37 @@
 
 h1 {
     font-family: 'Courier New', Courier, monospace;
-    font-size: 12rem;
+    font-size: 4rem;
     color: blueviolet;
     display: flex;
     align-content: center;
     justify-content: center;
 }
 
-#spinner {
+#carousel {
+
+}
+
+.spinner {
     height: 50%;
     width: 100%;
+    border: 1px solid grey;
     display: flex;
     align-content: center;
     justify-content: center;
 }
 
 .platform {
+    display: flex;
+    align-content: center;
+    justify-content: center;
     overflow: hidden;
     position: relative;
+    list-style-type: none;
 }
 
 .slide {
+    visibility: hidden;
     width: 50%;
     height: 35%;
     float: left;
@@ -34,8 +44,12 @@ h1 {
 
 }
 
+.onScreen {
+    visibility: visible;
+}
+
 .directors {
-    font-size: 200%;
+    font-size: 50px;
 }
 
 .arrows {
@@ -63,6 +77,10 @@ h1 {
     width: 10px;
 }
 
+.locator:hover {
+    background-color: deepskyblue;
+}
+
 .onScreen {
     
 }
@@ -71,3 +89,6 @@ h1 {
     cursor: pointer;
 }
 
+.left:hover, .right:hover {
+    color: greenyellow;
+}

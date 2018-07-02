@@ -1,13 +1,17 @@
 class Carousel {
-    constructor() {
-        this.XXXX = YYYY
+    constructor(viewer) {
+        this.viewer = viewer;
         this.cacheDom();
         this.addEventListeners();
         this.render();
     }
 
     cacheDom() {
-        this.root = document.querySelectorAll('#spinner', slide);
+        this.root = document.querySelector('#carousel');
+        this.left = this.root.querySelector('.left');
+        this.right = this.root.querySelector('.right');
+        this.platform = this.root.querySelectorAll('.platform.slide');
+        this.location = this.root.querySelectorAll('.location.locators');
         
     }
 
@@ -26,7 +30,7 @@ class Carousel {
     }
 
     locator() {
-        
+
     }
 
     render() {
