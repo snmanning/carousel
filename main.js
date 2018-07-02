@@ -7,12 +7,26 @@ class Carousel {
     }
 
     cacheDom() {
-        this.root = document.querySelector('#spinner');
+        this.root = document.querySelectorAll('#spinner', slide);
         
     }
 
     bindEventListeners() {
-        this.
+        this.left.addEventListeners("click", console.log);
+        this.right.addEventListeners("click", console.log);
+        this.locator.addEventListeners("click", console.log);
+    }
+
+    right() {
+
+    }
+
+    left() {
+
+    }
+
+    locator() {
+        
     }
 
     render() {

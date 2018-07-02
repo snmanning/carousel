@@ -1,13 +1,41 @@
-.platform {
-
+* {
+    box-sizing: border-box;
 }
 
-.horse {
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12rem;
+    color: blueviolet;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+#spinner {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.platform {
+    overflow: hidden;
+    position: relative;
+}
+
+.slide {
+    width: 50%;
+    height: 35%;
+    float: left;
+    transition-duration: 0.6s;
+    transition-delay: initial;
+    transform: translate(100%, 0px, 0px);
 
 }
 
 .directors {
-
+    font-size: 200%;
 }
 
 .arrows {
@@ -15,7 +43,7 @@
 }
 
 .left {
-    
+
 }
 
 .right {
@@ -26,6 +54,15 @@
 
 }
 
+.locator {
+    background-color: orange;
+    border-radius: 50%;
+    display: inline-block;
+    height: 10px;
+    margin: 5px;
+    width: 10px;
+}
+
 .onScreen {
     
 }
@@ -33,3 +70,4 @@
 .cursor {
     cursor: pointer;
 }
+
