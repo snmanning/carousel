@@ -21,12 +21,12 @@ class Carousel {
     }
 
     rightClick() {
-        this.imageNum = (((this.imageNum - 1) % 5) + 5) % 5;
+        this.imageNum += 1
         this.render();
     }
 
     leftClick() {
-        this.imageNum = (((this.imageNum + 1) % 5) + 5) % 5;
+        this.imageNum -= 1
         this.render();
     }
 
