@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: thistle;
+}
+
 h1 {
     font-family: 'Courier New', Courier, monospace;
     font-size: 4rem;
@@ -12,48 +16,53 @@ h1 {
 }
 
 #carousel {
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .spinner {
-    height: 50%;
-    width: 100%;
+    width: 250px;
     border: 1px solid grey;
     display: flex;
     align-content: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 .platform {
     display: flex;
     align-content: center;
-    justify-content: center;
-    overflow: hidden;
+    justify-content: flex-start;
+    max-height: 250px; 
     position: relative;
+    background-color: gray;
     list-style-type: none;
 }
 
 .slide {
-    visibility: hidden;
-    width: 50%;
-    height: 35%;
-    float: left;
-    transition-duration: 0.6s;
-    transition-delay: initial;
-    transform: translate(100%, 0px, 0px);
-
+    /* visibility: hidden; */
+    width: 100%;
+    margin: 1px;
 }
 
-.onScreen {
+.R {
+    transform: rotate(90deg);
+}
+
+/* .onScreen {
     visibility: visible;
-}
+} */
 
 .directors {
     font-size: 50px;
+    display: flex;
+    align-content: center;
 }
 
 .arrows {
-    
+    margin: auto;
 }
 
 .left {
@@ -65,7 +74,9 @@ h1 {
 }
 
 .location {
-
+    visibility: hidden;
+    z-index: 1;
+    transform: translate(10%, 25%);
 }
 
 .locator {
@@ -75,6 +86,7 @@ h1 {
     height: 10px;
     margin: 5px;
     width: 10px;
+    
 }
 
 .locator:hover {
@@ -82,7 +94,7 @@ h1 {
 }
 
 .onScreen {
-    
+    visibility: visible;
 }
 
 .cursor {

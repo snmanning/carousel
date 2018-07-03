@@ -1,8 +1,9 @@
 class Carousel {
     constructor(viewer) {
         this.viewer = viewer;
+        this.imageNum = 0;
         this.cacheDom();
-        this.addEventListeners();
+        this.bindEventListeners();
         this.render();
     }
 
@@ -10,33 +11,30 @@ class Carousel {
         this.root = document.querySelector('#carousel');
         this.left = this.root.querySelector('.left');
         this.right = this.root.querySelector('.right');
-        this.platform = this.root.querySelectorAll('.platform.slide');
-        this.location = this.root.querySelectorAll('.location.locators');
+        this.platform = this.root.querySelector('.platform');
         
     }
 
     bindEventListeners() {
-        this.left.addEventListeners("click", console.log);
-        this.right.addEventListeners("click", console.log);
-        this.locator.addEventListeners("click", console.log);
+        this.left.addEventListener("click", this.leftClick.bind(this));
+        this.right.addEventListener("click", this.rightClick.bind(this));
     }
 
-    right() {
-
+    rightClick() {
+        this.imageNum = (((this.imageNum - 1) % 5) + 5) % 5;
+        this.render();
     }
 
-    left() {
-
+    leftClick() {
+        this.imageNum = (((this.imageNum + 1) % 5) + 5) % 5;
+        this.render();
     }
 
-    locator() {
-
-    }
 
     render() {
-        this.
+        this.platform.style.left = `${this.imageNum * 251}px`;
     }
 
 }
 
-window.XXXX = new Carousel[];
+window.viewer = new Carousel();
