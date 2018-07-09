@@ -12,6 +12,7 @@ class Carousel {
         this.left = this.root.querySelector('.left');
         this.right = this.root.querySelector('.right');
         this.platform = this.root.querySelector('.platform');
+        this.images = this.platform.querySelectorAll('img');
         
     }
 
@@ -21,18 +22,18 @@ class Carousel {
     }
 
     rightClick() {
-        this.imageNum += 1
+        this.imageNum = (((this.imageNum + 1) % this.images.length) + this.images.length) % this.images.length;
         this.render();
     }
 
     leftClick() {
-        this.imageNum -= 1
+        this.imageNum = (((this.imageNum + 1) % this.images.length) + this.images.length) % this.images.length;
         this.render();
     }
 
 
     render() {
-        this.platform.style.left = `${this.imageNum * 251}px`;
+        this.platform.style.left = `-${this.imageNum * 251}px`;
     }
 
 }
