@@ -12,6 +12,7 @@ class Carousel {
     this.right = this.root.querySelector(".right");
     this.platform = this.root.querySelector(".platform");
     this.images = this.platform.querySelectorAll("img");
+    this.locators = this.root.querySelectorAll('.locator');
   }
 
   bindEventListeners() {
@@ -28,13 +29,15 @@ class Carousel {
 
   leftClick() {
     this.imageNum =
-      (((this.imageNum + 1) % this.images.length) + this.images.length) %
+      (((this.imageNum - 1) % this.images.length) + this.images.length) %
       this.images.length;
     this.render();
   }
 
   render() {
     this.platform.style.left = `-${this.imageNum * 251}px`;
+    this.locators.forEach((locator) => locator.classList.remove('active'));
+    this.locators[this.imageNum].classList.add('active');
   }
 }
 
