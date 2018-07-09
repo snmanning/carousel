@@ -1,106 +1,91 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: thistle;
+  background-color: thistle;
 }
 
 h1 {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 4rem;
-    color: blueviolet;
-    display: flex;
-    align-content: center;
-    justify-content: center;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 4rem;
+  color: blueviolet;
+  display: flex;
+  align-content: center;
+  justify-content: center;
 }
 
 #carousel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .spinner {
-    width: 250px;
-    border: 1px solid grey;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    overflow: hidden;
+  width: 250px;
+  border: 1px solid grey;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .platform {
-    display: flex;
-    align-content: center;
-    justify-content: flex-start;
-    max-height: 250px; 
-    position: relative;
-    background-color: gray;
-    list-style-type: none;
+  display: flex;
+  align-content: center;
+  justify-content: flex-start;
+  max-height: 250px;
+  position: relative;
+  background-color: gray;
 }
 
 .slide {
-    /* visibility: hidden; */
-    width: 100%;
-    margin: 1px;
+  width: 100%;
+  margin: 1px;
 }
 
-.R {
-    transform: rotate(90deg);
+.rotated {
+  transform: rotate(90deg);
 }
-
-/* .onScreen {
-    visibility: visible;
-} */
 
 .directors {
-    font-size: 50px;
-    display: flex;
-    align-content: center;
-}
+  font-size: 50px;
+  display: flex;
+  align-content: center;
+  justify-content: space-evenly;
 
+}
 .arrows {
-    margin: auto;
-}
-
-.left {
-
-}
-
-.right {
-
+  margin: auto;
 }
 
 .location {
-    visibility: hidden;
-    z-index: 1;
-    transform: translate(10%, 25%);
+  width: 70%;
 }
 
 .locator {
-    background-color: orange;
-    border-radius: 50%;
-    display: inline-block;
-    height: 10px;
-    margin: 5px;
-    width: 10px;
-    
+  background-color: orange;
+  border-radius: 50%;
+  display: inline-block;
+  height: 10px;
+  margin: 5px;
+  width: 10px;
 }
 
-.locator:hover {
+.active {
     background-color: deepskyblue;
 }
 
-.onScreen {
-    visibility: visible;
+.locator:hover {
+  background-color: deepskyblue;
 }
 
 .cursor {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-.left:hover, .right:hover {
-    color: greenyellow;
+.left:hover,
+.right:hover {
+  color: greenyellow;
 }

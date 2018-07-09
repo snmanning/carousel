@@ -1,40 +1,44 @@
 class Carousel {
-    constructor(viewer) {
-        this.viewer = viewer;
-        this.imageNum = 0;
-        this.cacheDom();
-        this.bindEventListeners();
-        this.render();
-    }
+  constructor() {
+    this.imageNum = 0;
+    this.cacheDom();
+    this.bindEventListeners();
+    this.render();
+  }
 
-    cacheDom() {
-        this.root = document.querySelector('#carousel');
-        this.left = this.root.querySelector('.left');
-        this.right = this.root.querySelector('.right');
-        this.platform = this.root.querySelector('.platform');
-        
-    }
+  cacheDom() {
+    this.root = document.querySelector("#carousel");
+    this.left = this.root.querySelector(".left");
+    this.right = this.root.querySelector(".right");
+    this.platform = this.root.querySelector(".platform");
+    this.images = this.platform.querySelectorAll("img");
+    this.locators = this.root.querySelectorAll('.locator');
+  }
 
-    bindEventListeners() {
-        this.left.addEventListener("click", this.leftClick.bind(this));
-        this.right.addEventListener("click", this.rightClick.bind(this));
-    }
+  bindEventListeners() {
+    this.left.addEventListener("click", this.leftClick.bind(this));
+    this.right.addEventListener("click", this.rightClick.bind(this));
+  }
 
-    rightClick() {
-        this.imageNum += 1
-        this.render();
-    }
+  rightClick() {
+    this.imageNum =
+      (((this.imageNum + 1) % this.images.length) + this.images.length) %
+      this.images.length;
+    this.render();
+  }
 
-    leftClick() {
-        this.imageNum -= 1
-        this.render();
-    }
+  leftClick() {
+    this.imageNum =
+      (((this.imageNum - 1) % this.images.length) + this.images.length) %
+      this.images.length;
+    this.render();
+  }
 
-
-    render() {
-        this.platform.style.left = `${this.imageNum * 251}px`;
-    }
-
+  render() {
+    this.platform.style.left = `-${this.imageNum * 251}px`;
+    this.locators.forEach((locator) => locator.classList.remove('active'));
+    this.locators[this.imageNum].classList.add('active');
+  }
 }
 
 window.viewer = new Carousel();
